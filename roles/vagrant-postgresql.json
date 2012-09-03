@@ -1,0 +1,21 @@
+{
+    "name": "vagrant-postgresql",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+    },
+    "override_attributes": {
+      "postgresql": {
+            "listen_addresses": "*",
+            "ssl": false,
+            "password": {
+                "postgres": "postgres"
+            }
+        }  
+    },
+    "description": "Ready to use PostgreSQL VM",
+    "run_list": [
+        "recipe[apt]",
+        "recipe[main]"
+    ]
+}
